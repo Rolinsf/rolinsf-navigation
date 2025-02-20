@@ -35,17 +35,36 @@ DEFAULT: '4px',
 </script>
 <style>
 body {
-min-height: 1024px;
-background-image: url('img/bk3.jpg');
-background-size: cover;
-background-position: center;
+    min-height: 1024px;
+    background-image: url('img/bk3.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* 添加遮罩层 */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 黑色半透明遮罩 */
+    z-index: 1;
+}
+
+/* 确保内容在遮罩层之上 */
+.min-h-screen {
+    position: relative;
+    z-index: 2;
 }
 </style>
 </head>
 <body>
 <div class="min-h-screen w-[1440px] mx-auto px-8 py-12">
 <main class="flex flex-col items-center justify-center h-screen">
-<h1 class="font-['Pacifico'] text-5xl text-white mb-12 text-center">若林轻小说|导航中心</h1>
+<h1 class="font-['Pacifico'] text-5xl text-white mb-12 text-center">若林轻小说 | 导航中心</h1>
 <div class="flex gap-6">
 <a href="https://rolinsf.github.io/rolinsf-archives/" class="bg-white bg-opacity-20 hover:bg-opacity-30 text-white px-8 py-4 rounded-button backdrop-blur-sm transition-all duration-300">
 <i class="fas fa-code mr-2"></i>
