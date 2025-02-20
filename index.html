@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>若林轻小说|导航页</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#4F46E5',
+secondary: '#6B7280'
+},
+borderRadius: {
+'none': '0px',
+'sm': '2px',
+DEFAULT: '4px',
+'md': '8px',
+'lg': '12px',
+'xl': '16px',
+'2xl': '20px',
+'3xl': '24px',
+'full': '9999px',
+'button': '4px'
+}
+}
+}
+}
+</script>
+<style>
+body {
+min-height: 1024px;
+background-image: url('img/bk3.jpg');
+background-size: cover;
+background-position: center;
+}
+</style>
+</head>
+<body>
+<div class="min-h-screen w-[1440px] mx-auto px-8 py-12">
+<main class="flex flex-col items-center justify-center h-screen">
+<h1 class="font-['Pacifico'] text-5xl text-white mb-12 text-center">若林轻小说|导航中心</h1>
+<div class="flex gap-6">
+<a href="https://rolinsf.github.io/rolinsf-archives/" class="bg-white bg-opacity-20 hover:bg-opacity-30 text-white px-8 py-4 rounded-button backdrop-blur-sm transition-all duration-300">
+<i class="fas fa-code mr-2"></i>
+若林档案馆
+</a>
+<a href="https://rolinsf.top" class="bg-white bg-opacity-20 hover:bg-opacity-30 text-white px-8 py-4 rounded-button backdrop-blur-sm transition-all duration-300">
+<i class="fas fa-paint-brush mr-2"></i>
+若林轻小说|活动投稿
+</a>
+<a href="#" class="bg-white bg-opacity-20 hover:bg-opacity-30 text-white px-8 py-4 rounded-button backdrop-blur-sm transition-all duration-300">
+<i class="fas fa-chart-line mr-2"></i>
+尽请期待
+</a>
+</div>
+</main>
+</div>
+</body>
+</html>
