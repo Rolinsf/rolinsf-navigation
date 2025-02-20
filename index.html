@@ -35,14 +35,15 @@ DEFAULT: '4px',
 </script>
 <style>
 body {
-    min-height: 1024px;
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
     background-image: url('img/bk3.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
 }
 
-/* 添加遮罩层 */
 body::before {
     content: '';
     position: absolute;
@@ -50,19 +51,88 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* 黑色半透明遮罩 */
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
 
-/* 确保内容在遮罩层之上 */
 .min-h-screen {
     position: relative;
     z-index: 2;
+    max-width: 100vw;
+    overflow-x: hidden;
+    width: 100% !important; /* 移除固定宽度 */
+}
+
+main {
+    padding: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 48px !important;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+    word-break: break-word;
+}
+
+/* 移动端适配 */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 32px !important;
+        padding: 0 0.5rem;
+    }
+}
+
+/* 小屏幕适配 */
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 24px !important;
+        padding: 0 0.25rem;
+        word-spacing: normal;
+    }
+}
+.flex.gap-6 {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem !important; /* 调整按钮间距 */
+}
+
+.flex.gap-6 a {
+    min-width: 200px;
+    text-align: center;
+    font-size: 16px;
+    padding: 1rem 2rem;
+    white-space: normal; /* 允许文字换行 */
+    height: auto; /* 自适应高度 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.5;
+}
+
+/* 移动端适配 */
+@media screen and (max-width: 768px) {
+    .flex.gap-6 a {
+        min-width: 180px;
+        font-size: 14px;
+        padding: 0.75rem 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .flex.gap-6 a {
+        width: 90%;
+        max-width: 280px;
+        padding: 0.75rem 1rem;
+    }
 }
 </style>
 </head>
 <body>
-<div class="min-h-screen w-[1440px] mx-auto px-8 py-12">
+<div class="min-h-screen mx-auto px-4 py-8"> <!-- 移除 w-[1440px]，调整内边距 -->
 <main class="flex flex-col items-center justify-center h-screen">
 <h1 class="font-['Pacifico'] text-5xl text-white mb-12 text-center">若林轻小说 | 导航中心</h1>
 <div class="flex gap-6">
